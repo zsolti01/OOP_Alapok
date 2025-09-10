@@ -8,17 +8,30 @@ namespace OOP_Alapok
 {
     public class Szemely
     {
-        public string nev = "Peti";
-        public int kor = 34;
+        string nev;
+        int kor;
+
+        public Szemely(string Nev, int Kor)
+        {
+            nev = Nev;
+            kor = Kor;
+        }
+
+        public string Kiir()
+        {
+            return $"A tanuló neve: {nev} és {kor} éves.";
+        }
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            Szemely tanulo1 = new Szemely();
-            Console.WriteLine($"A tanuló neve: {tanulo1.nev}");
-            Console.WriteLine($"A kora: {tanulo1.kor}");
+            Szemely tanulo1 = new Szemely("Peti", 34);
+            Console.WriteLine(tanulo1.Kiir());
+
+            Szemely tanulo2 = new Szemely("Jani", 38);
+            Console.WriteLine(tanulo2.Kiir());
         }
     }
 }
