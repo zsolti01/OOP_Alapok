@@ -72,6 +72,11 @@ namespace OOP_Alapok
     public class Hallgato : Szemely
     {
         private int netpunKod = 67;
+        
+        public void Kiir()
+        {
+            nev = string.Empty;
+        }
     }
 
     internal class Program
