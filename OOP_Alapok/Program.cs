@@ -11,6 +11,11 @@ namespace OOP_Alapok
         protected string nev;
         int kor;
 
+        public Szemely(string name, int age)
+        {
+            nev = name;
+            kor = age;
+        }
 
         public string Nev
         {
@@ -72,6 +77,11 @@ namespace OOP_Alapok
     public class Hallgato : Szemely
     {
         private string netpunKod;
+
+        public Hallgato(string name, int age, string neptuncode) : base(name, age) 
+        {
+            neptunKod = neptuncode;
+        }
         
         public string NetpunKod
         {
@@ -82,26 +92,51 @@ namespace OOP_Alapok
                 else Console.WriteLine("Nem megfelelő hosszúság!");
             }
         }
+
+        public override string ToString()
+        {
+            return $"A hallgató neve {nev}";
+        }
+
+    }
+
+    public class Dolgozo : Szemely
+    {
+        public Dolgozo(string name, int age, int salary) : base(name, age)
+        {
+            ber = salary;
+        }
+
+        public override string ToString()
+        {
+            return $"A hallgató neve {nev}, a bére {ber}";
+        }
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
+            /*
             Szemely tanulo1 = new Szemely();
             tanulo1.Nev = "Gábor";
             tanulo1.Kor = 26;
             Console.WriteLine(tanulo1);
+            */
 
             Bankszamla bankszamla1 = new Bankszamla();
             bankszamla1.Egyenleg = 5700;
             Console.WriteLine($"A tanuló bankszámláján lévő összeg: {bankszamla1.Egyenleg}Ft.");
-
+            
+            /*
             Hallgato hallgato1 = new Hallgato();
             hallgato1.NetpunKod = "HIE596";
             Console.WriteLine(hallgato1.NetpunKod);
+            */
 
             List<Hallgato> hallgatok = new List<Hallgato>();
+
+            /*
             for (int i = 0; i < 2; i++)
             {
                 Hallgato hallgato = new Hallgato();
@@ -121,6 +156,13 @@ namespace OOP_Alapok
             {
                 Console.WriteLine(item.Nev);
             }
+            */
+
+            Hallgato hallgato1 = new Hallgato("Peti", 22, HIE596);
+            Console.WriteLine(hallgato1);
+
+            Dolgozo dolgozo1 = new Dolgozo("Gábor" , 67, 67000);
+            Console.WriteLine(dolgozo1);
 
             /*
             Szemely tanulo1 = new Szemely("Peti", 34);
