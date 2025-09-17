@@ -98,8 +98,29 @@ namespace OOP_Alapok
             Console.WriteLine($"A tanuló bankszámláján lévő összeg: {bankszamla1.Egyenleg}Ft.");
 
             Hallgato hallgato1 = new Hallgato();
-            hallgato1.NetpunKod = "JHIEHG";
+            hallgato1.NetpunKod = "HIE596";
             Console.WriteLine(hallgato1.NetpunKod);
+
+            List<Hallgato> hallgatok = new List<Hallgato>();
+            for (int i = 0; i < 2; i++)
+            {
+                Hallgato hallgato = new Hallgato();
+                Console.WriteLine($"Kérem a(z) {i+1}. hallgató nevét: ");
+                hallgato.Nev = Console.ReadLine();
+                Console.WriteLine($"Kérem az életkorát is: ");
+                hallgato.Kor = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Kérem az netpunkódját is: ");
+                hallgato.NetpunKod = Console.ReadLine();
+                hallgatok.Add(hallgato);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Hallgatók neve:");
+
+            foreach (var item in hallgatok)
+            {
+                Console.WriteLine(item.Nev);
+            }
 
             /*
             Szemely tanulo1 = new Szemely("Peti", 34);
