@@ -71,11 +71,16 @@ namespace OOP_Alapok
 
     public class Hallgato : Szemely
     {
-        private int netpunKod = 67;
+        private string netpunKod;
         
-        public void Kiir()
+        public string NetpunKod
         {
-            nev = string.Empty;
+            get { return netpunKod; }
+            set
+            {
+                if (value.Length <= 6) netpunKod = value;
+                else Console.WriteLine("Nem megfelelő hosszúság!");
+            }
         }
     }
 
@@ -91,6 +96,10 @@ namespace OOP_Alapok
             Bankszamla bankszamla1 = new Bankszamla();
             bankszamla1.Egyenleg = 5700;
             Console.WriteLine($"A tanuló bankszámláján lévő összeg: {bankszamla1.Egyenleg}Ft.");
+
+            Hallgato hallgato1 = new Hallgato();
+            hallgato1.NetpunKod = "JHIEHG";
+            Console.WriteLine(hallgato1.NetpunKod);
 
             /*
             Szemely tanulo1 = new Szemely("Peti", 34);
