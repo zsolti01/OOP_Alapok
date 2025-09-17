@@ -8,7 +8,7 @@ namespace OOP_Alapok
 {
     public class Szemely
     {
-        string nev;
+        protected string nev;
         int kor;
 
 
@@ -69,6 +69,11 @@ namespace OOP_Alapok
         }
     }
 
+    public class Hallgato : Szemely
+    {
+        private int netpunKod = 67;
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -80,7 +85,7 @@ namespace OOP_Alapok
 
             Bankszamla bankszamla1 = new Bankszamla();
             bankszamla1.Egyenleg = 5700;
-            Console.WriteLine($"A tanuló pénze: {bankszamla1.Egyenleg}Ft.");
+            Console.WriteLine($"A tanuló bankszámláján lévő összeg: {bankszamla1.Egyenleg}Ft.");
 
             /*
             Szemely tanulo1 = new Szemely("Peti", 34);
